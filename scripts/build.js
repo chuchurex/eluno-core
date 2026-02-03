@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Build Script for The Teachings (Gentle Version)
  *
