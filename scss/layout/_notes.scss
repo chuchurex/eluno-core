@@ -1,0 +1,71 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// NOTES PANEL
+// =====================================================
+
+.notes {
+  grid-area: sidebar;
+  @extend %sticky-panel;
+  background: $bg2;
+  border-left: 1px solid $border;
+  padding: $spacing-lg $spacing-md;
+}
+
+.notes-head {
+  font-size: 0.9rem;
+  color: $muted;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-sm;
+  @extend %border-bottom-subtle;
+}
+
+.notes-empty {
+  color: $muted;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.note {
+  display: none;
+  margin-bottom: $spacing-md;
+  padding: 0.875rem;
+  background: $bg3;
+  border-left: 2px solid $border;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  opacity: 0.6;
+  transition: all 0.3s;
+
+  &.active {
+    display: block;
+    opacity: 1;
+    border-left-color: $gold;
+    background: rgba(201, 169, 98, 0.08);
+  }
+}
+
+.note-title {
+  font-family: $font-heading;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $gold;
+  margin-bottom: $spacing-xs;
+}
+
+.note-content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: $text2;
+
+  p {
+    text-align: left;
+    margin-bottom: $spacing-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

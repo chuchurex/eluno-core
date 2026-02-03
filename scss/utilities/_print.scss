@@ -1,0 +1,96 @@
+// =====================================================
+// PRINT STYLES
+// =====================================================
+
+@media print {
+  // Hide interactive and non-book elements
+  .toggle,
+  .nav,
+  .notes,
+  .overlay,
+  .nav-head,
+  .nav-toggle,
+  .notes-toggle,
+  .feedback,
+  .nav-footer-links,
+  .divider::after,
+  #feedback-section {
+    display: none !important;
+  }
+
+  // Layout adjustments
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .layout {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  .main {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+
+  .chapter {
+    margin-bottom: 2rem !important;
+    page-break-after: always;
+
+    &:last-child {
+      page-break-after: auto;
+    }
+  }
+
+  .ch-head {
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  .ch-title {
+    font-size: 24pt !important;
+  }
+
+  .sec-title {
+    font-size: 16pt !important;
+    margin-top: 2rem !important;
+  }
+
+  p {
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+  }
+
+  // Ensure links are not decorated
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  // Force page margins for US Letter
+  @page {
+    size: letter;
+    margin: 1in;
+  }
+
+  // Show term text but remove link style
+  .term {
+    color: black !important;
+    border-bottom: none !important;
+    cursor: default !important;
+    background: none !important;
+  }
+
+  // Remove background effects
+  body::before {
+    display: none !important;
+  }
+}

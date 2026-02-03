@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// TOGGLE BUTTONS
+// =====================================================
+
+.toggle {
+  display: block;
+  position: fixed;
+  z-index: 200;
+  @extend %panel-base;
+  color: $gold;
+  padding: 0.5rem $spacing-sm;
+  cursor: pointer;
+  font-family: $font-heading;
+  font-size: 0.9rem;
+}
+
+.nav-toggle {
+  top: $spacing-sm;
+  left: $spacing-sm;
+  // Hidden on desktop - only visible on tablet/mobile
+  display: none;
+}
+
+.notes-toggle {
+  top: $spacing-sm;
+  right: $spacing-sm;
+}
+
+.theme-toggle {
+  top: $spacing-sm;
+  right: $spacing-sm;
+  font-size: 1rem;
+  padding: 0.4rem $spacing-sm;
+}
+
+.lang-toggle {
+  // Hidden - language selector moved inside sidebar
+  display: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 90;
+
+  &.active {
+    display: block;
+  }
+}

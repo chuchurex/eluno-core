@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// PANELS & BANNERS
+// =====================================================
+
+// Disclaimer Banner - L/L Research Attribution
+.disclaimer-banner {
+  margin: $spacing-lg 0;
+  padding: $spacing-md $spacing-lg;
+  background: rgba(201, 169, 98, 0.05);
+  border: 1px solid $border2;
+  border-radius: $radius-sm;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: $text2;
+
+  .disclaimer-title {
+    font-family: $font-heading;
+    font-size: 1rem;
+    color: $gold;
+    margin-bottom: $spacing-sm;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    color: $gold;
+    text-decoration: none;
+    border-bottom: 1px dotted $gold-dim;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $text;
+      border-bottom-color: $gold;
+    }
+  }
+}

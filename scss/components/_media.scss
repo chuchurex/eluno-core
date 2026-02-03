@@ -1,0 +1,132 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// MEDIA COMPONENTS - Audio, PDF, YouTube
+// =====================================================
+
+// Media toolbar (inline design with accordion)
+.ch-media-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  &.homepage-media {
+    justify-content: center;
+    margin: $spacing-md 0;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    padding: $spacing-md 0;
+  }
+}
+
+.ch-media-icon {
+  @extend %media-icon;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &.active {
+    color: var(--gold-hover);
+  }
+
+  &.disabled {
+    display: none;
+  }
+}
+
+.ch-media-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $gold-dim;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.ch-media-icon:hover .ch-media-label {
+  color: $gold;
+}
+
+// Audio accordion panel - inline expansion
+.ch-media-audio-panel {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  align-items: center;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    width: 220px;
+    margin-right: $spacing-xs;
+    padding-right: $spacing-xs;
+    border-right: 1px solid $border;
+  }
+
+  audio {
+    width: 200px;
+    height: 32px;
+    border-radius: $radius-sm;
+  }
+}
+
+// Legacy panel styles (for YouTube if needed)
+.ch-media-panel {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  @extend %panel-base;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.ch-media-panel-text {
+  color: $text2;
+  font-size: 0.9rem;
+  margin-right: auto;
+}
+
+.ch-media-panel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0.8em;
+  background: $bg3;
+  border: 1px solid $gold-dim;
+  border-radius: $radius-sm;
+  color: $gold;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(var(--gold-rgb), 0.2);
+    border-color: $gold;
+  }
+
+  &:visited {
+    color: $gold;
+  }
+}
+
+.ch-media-audio {
+  flex: 1;
+  max-width: 300px;
+
+  audio {
+    width: 100%;
+    height: 32px;
+    border-radius: $radius-sm;
+  }
+}

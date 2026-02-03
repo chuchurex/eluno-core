@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// LAYOUT - Grid & Structure
+// =====================================================
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas: "nav main";
+  min-height: 100vh;
+}
+
+.main {
+  grid-area: main;
+  max-width: 680px;
+  padding: $spacing-xl 2.5rem 5rem;
+  margin: 0 auto;
+}

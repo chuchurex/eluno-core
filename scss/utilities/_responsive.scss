@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// RESPONSIVE STYLES
+// =====================================================
+
+@include tablet {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    @include fixed-panel(left);
+    left: 0;
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .main {
+    padding: 4rem 1.5rem $spacing-xl;
+    max-width: 100%;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .notes-toggle {
+    display: block;
+  }
+}
+
+@include mobile {
+  body {
+    font-size: 16px;
+  }
+
+  .ch-title {
+    font-size: 1.7rem;
+  }
+
+  .sec-title {
+    font-size: 1.15rem;
+  }
+
+  .main {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+
+  .section > p:first-of-type::first-letter {
+    font-size: 2.5rem;
+  }
+
+  // TOC responsive
+  .toc-title {
+    font-size: 1.8rem;
+  }
+
+  .toc-chapter {
+    padding: $spacing-sm $spacing-md;
+    gap: $spacing-sm;
+  }
+
+  .toc-chapter-num {
+    min-width: 60px;
+    font-size: 0.65rem;
+  }
+
+  .toc-chapter-title {
+    font-size: 1rem;
+  }
+
+  // Chapter nav responsive
+  .chapter-nav {
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .chapter-nav-link {
+    max-width: 100%;
+
+    &.next {
+      align-items: flex-start;
+    }
+  }
+}

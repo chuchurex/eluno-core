@@ -1,0 +1,125 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// ABOUT PAGE STYLES
+// =====================================================
+
+.about-page {
+  .section > p:first-of-type::first-letter {
+    font-size: inherit;
+    float: none;
+    padding-right: 0;
+    color: inherit;
+  }
+}
+
+.about-subtitle {
+  font-family: $font-body;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: $text2;
+  margin-top: $spacing-sm;
+}
+
+.about-timeline {
+  @extend %panel-base;
+  padding: $spacing-lg;
+  margin: $spacing-lg 0;
+
+  .timeline-item {
+    display: flex;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-md;
+    @extend %border-bottom-subtle;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .timeline-time {
+    color: $gold;
+    font-weight: 500;
+    min-width: 70px;
+    flex-shrink: 0;
+    font-family: $font-heading;
+  }
+
+  .timeline-text {
+    color: $text2;
+  }
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: $spacing-md;
+  margin: $spacing-lg 0;
+
+  .stat {
+    @extend %panel-base;
+    padding: $spacing-md;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    color: $gold;
+    font-family: $font-heading;
+  }
+
+  .stat-label {
+    color: $muted;
+    font-size: 0.85rem;
+  }
+}
+
+.about-funfact {
+  background: linear-gradient(135deg, $bg2 0%, $bg3 100%);
+  border: 1px solid $gold-dim;
+  border-radius: $radius-sm;
+  padding: $spacing-md $spacing-lg;
+  margin: $spacing-md 0;
+
+  .funfact-title {
+    color: $gold;
+    font-weight: 500;
+    margin-bottom: $spacing-sm;
+    font-family: $font-heading;
+  }
+
+  p {
+    color: $text2;
+    margin-bottom: 0;
+  }
+}
+
+.about-credits {
+  @extend %panel-base;
+  padding: $spacing-lg;
+
+  p {
+    margin-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.about-footer {
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  @extend %border-bottom-subtle;
+  border-bottom: none;
+  border-top: 1px solid $border;
+  text-align: center;
+  color: $muted;
+  font-size: 0.9rem;
+
+  p {
+    margin-bottom: $spacing-xs;
+  }
+}

@@ -1,0 +1,183 @@
+@use 'variables' as *;
+
+// =====================================================
+// PLACEHOLDERS - Reusable Patterns
+// =====================================================
+
+// ===== LAYOUT PATTERNS =====
+
+%hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+%sticky-panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  @extend %hide-scrollbar;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ===== SURFACE PATTERNS =====
+
+%panel-base {
+  background: $bg2;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+}
+
+%panel-interactive {
+  @extend %panel-base;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $bg3;
+    border-color: $border2;
+  }
+}
+
+%card-elevated {
+  @extend %panel-base;
+  padding: $spacing-md $spacing-lg;
+}
+
+// ===== TYPOGRAPHY PATTERNS =====
+
+%heading-style {
+  font-family: $font-heading;
+  font-weight: 400;
+}
+
+%label-style {
+  font-family: $font-heading;
+  font-size: 0.75rem;
+  color: $gold-dim;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+%section-title {
+  @extend %label-style;
+  padding-bottom: $spacing-sm;
+  border-bottom: 1px solid $border;
+  margin-bottom: $spacing-md;
+}
+
+// ===== INTERACTIVE PATTERNS =====
+
+%gold-link {
+  color: $gold;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--gold-hover);
+  }
+}
+
+%nav-link-base {
+  display: block;
+  padding: 0.35rem 0;
+  color: $text2;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $gold;
+  }
+}
+
+%button-ghost {
+  background: transparent;
+  border: 1px solid $gold;
+  color: $gold;
+  padding: 0.5rem $spacing-md;
+  font-family: $font-heading;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: $gold;
+    color: $bg;
+  }
+}
+
+// ===== BORDER PATTERNS =====
+
+%border-bottom-subtle {
+  border-bottom: 1px solid $border;
+}
+
+%border-left-accent {
+  border-left: 2px solid $gold-dim;
+  padding-left: $spacing-sm;
+}
+
+%border-left-gold {
+  border-left: 3px solid $gold-dim;
+  padding-left: $spacing-md;
+}
+
+// ===== FORM ELEMENTS =====
+
+%input-base {
+  background: $bg3;
+  border: 1px solid $border;
+  color: $text;
+  padding: $spacing-sm;
+  font-family: $font-body;
+  font-size: 0.9rem;
+  border-radius: $radius-sm;
+  outline: none;
+  transition: all 0.3s;
+
+  &:focus {
+    border-color: $gold-dim;
+    background: rgba(201, 169, 98, 0.05);
+  }
+
+  &::placeholder {
+    color: $muted;
+  }
+}
+
+// ===== MEDIA ICON PATTERN =====
+
+%media-icon {
+  @extend %flex-center;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 10px;
+  background: transparent;
+  border: none;
+  color: $gold;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--gold-hover);
+
+    svg {
+      transform: scale(1.1);
+    }
+  }
+}

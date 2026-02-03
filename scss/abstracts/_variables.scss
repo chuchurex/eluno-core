@@ -1,0 +1,71 @@
+// =====================================================
+// VARIABLES & DESIGN TOKENS
+// =====================================================
+
+// Colors - Theming via CSS Properties
+:root {
+  // Default Dark Theme (Deep Space) - AAA Compliant
+  --bg: #050505;
+  --bg2: #121212;
+  --bg3: #1E1E1E;
+  --text: #E0E0E0;
+  --text2: #B0B0B0;
+  --muted: #9E9E9E;
+  --gold: #E6C275;
+  --gold-rgb: 230, 194, 117;
+  --gold-dim: #C9A962;
+  --gold-hover: #F0D595;
+  --gold-visited: #C4A768;
+  --border: rgba(230, 194, 117, 0.2);
+  --border2: rgba(230, 194, 117, 0.35);
+  --shadow: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] {
+  // Light Theme (Paper / "Oatmeal") - AAA Compliant
+  --bg: #F9F7F1;
+  --bg2: #F0EAD6;
+  --bg3: #E6DCC3;
+  --text: #1A1A1A;
+  --text2: #4A4A4A;
+  --muted: #595959;
+  --gold: #8F7528;
+  --gold-rgb: 143, 117, 40;
+  --gold-dim: #A68B3C;
+  --gold-hover: #705B1E;
+  --gold-visited: #7D6B35;
+  --border: rgba(143, 117, 40, 0.25);
+  --border2: rgba(143, 117, 40, 0.45);
+  --shadow: rgba(143, 117, 40, 0.15);
+}
+
+// Map SCSS variables to CSS Custom Properties
+$bg: var(--bg);
+$bg2: var(--bg2);
+$bg3: var(--bg3);
+$text: var(--text);
+$text2: var(--text2);
+$muted: var(--muted);
+$gold: var(--gold);
+$gold-dim: var(--gold-dim);
+$border: var(--border);
+$border2: var(--border2);
+
+// Typography
+$font-heading: 'Cormorant Garamond', serif;
+$font-body: 'Spectral', Georgia, serif;
+
+// Breakpoints
+$bp-tablet: 1100px;
+$bp-mobile: 600px;
+
+// Spacing
+$spacing-xs: 0.4rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1.25rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Border radius
+$radius-sm: 4px;
+$radius-md: 8px;

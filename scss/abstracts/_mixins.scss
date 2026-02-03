@@ -1,0 +1,65 @@
+@use 'variables' as *;
+
+// =====================================================
+// MIXINS - Parametrized Patterns
+// =====================================================
+
+// Responsive breakpoints
+@mixin tablet {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+// Transition shorthand
+@mixin transition($property: all, $duration: 0.2s) {
+  transition: $property $duration ease;
+}
+
+// Gold glow effect
+@mixin gold-glow($intensity: 0.4) {
+  text-shadow: 0 0 6px rgba(var(--gold-rgb), $intensity);
+}
+
+// Panel with custom border color
+@mixin panel($border-color: $border) {
+  background: $bg2;
+  border: 1px solid $border-color;
+  border-radius: $radius-sm;
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Fixed panel (for mobile nav/notes)
+@mixin fixed-panel($side) {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  padding-top: 4rem;
+  z-index: 100;
+  transition: transform 0.3s;
+
+  @if $side == left {
+    left: 0;
+    transform: translateX(-100%);
+  } @else {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}

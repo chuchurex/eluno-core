@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// FOOTER
+// =====================================================
+
+.footer {
+  margin-top: $spacing-xl;
+  padding-top: 1.5rem;
+  @extend %border-bottom-subtle;
+  border-bottom: none;
+  border-top: 1px solid $border;
+  text-align: center;
+  color: $muted;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+// L/L Research Attribution
+.footer-attribution {
+  margin-top: $spacing-lg;
+  padding-top: $spacing-md;
+  @extend %border-bottom-subtle;
+  border-bottom: none;
+  border-top: 1px solid $border;
+  text-align: center;
+  font-size: 0.9rem;
+  color: $muted;
+  line-height: 1.6;
+
+  p {
+    margin: 0.3rem 0;
+  }
+
+  a {
+    color: $gold-dim;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  .footer-copyright {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}

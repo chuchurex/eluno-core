@@ -1,0 +1,208 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// CHAPTER PAGE STYLES
+// =====================================================
+
+.chapter {
+  margin-bottom: 4rem;
+}
+
+.ch-head {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  @extend %border-bottom-subtle;
+}
+
+.ch-head-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ch-num {
+  @extend %label-style;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.ch-title {
+  @extend %heading-style;
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+
+  > p:first-of-type::first-letter {
+    font-family: $font-heading;
+    font-size: 3rem;
+    float: left;
+    line-height: 1;
+    padding-right: $spacing-xs;
+    color: $gold;
+  }
+}
+
+.sec-title {
+  font-family: $font-heading;
+  font-size: 1.3rem;
+  color: $gold;
+  margin-bottom: $spacing-md;
+  padding-top: $spacing-sm;
+}
+
+.divider {
+  text-align: center;
+  margin: 2.5rem 0;
+  color: $gold-dim;
+  letter-spacing: 1rem;
+}
+
+.quote {
+  font-family: $font-heading;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: $text2;
+  @extend %border-left-gold;
+  margin: $spacing-lg 0;
+  line-height: 1.5;
+}
+
+.term {
+  color: $gold;
+  border-bottom: 1px dotted $gold-dim;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-bottom-color: $gold;
+  }
+
+  &.active {
+    background: rgba(var(--gold-rgb), 0.15);
+    border-bottom-style: solid;
+  }
+}
+
+// Reference markers (superscript)
+.ref {
+  color: $gold;
+  cursor: pointer;
+  font-size: 1.4em;
+  font-weight: bold;
+  position: relative;
+  top: 0.05em;
+  margin-left: 3px;
+  margin-right: 2px;
+  padding: 0.2em 2px;
+  transition: all 0.2s;
+  border-radius: 3px;
+  border-bottom: 1px dotted $gold-dim;
+  @include gold-glow(0.4);
+  line-height: 0;
+  display: inline-block;
+  vertical-align: baseline;
+
+  &:hover {
+    color: var(--gold-hover);
+    background: rgba(var(--gold-rgb), 0.15);
+    @include gold-glow(0.6);
+    border-bottom-color: $gold;
+  }
+
+  &:active {
+    background: rgba(var(--gold-rgb), 0.25);
+  }
+
+  &.active {
+    color: var(--gold-hover);
+  }
+}
+
+// Reference notes in sidebar
+.ref-note {
+  @extend %border-left-accent;
+
+  .ref-icon {
+    color: $gold-dim;
+    margin-right: $spacing-xs;
+  }
+
+  .ref-link {
+    margin-top: $spacing-sm;
+    font-size: 0.85rem;
+
+    a {
+      @extend %gold-link;
+    }
+  }
+}
+
+// =====================================================
+// CHAPTER NAVIGATION (Prev/Next)
+// =====================================================
+
+.chapter-nav {
+  @extend %flex-between;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  @extend %border-bottom-subtle;
+  border-bottom: none;
+  border-top: 1px solid $border;
+}
+
+.chapter-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-md $spacing-lg;
+  text-decoration: none;
+  color: $text;
+  @extend %panel-base;
+  border-radius: $radius-md;
+  transition: all 0.3s ease;
+  max-width: 48%;
+  flex: 1;
+
+  &:hover:not(.disabled) {
+    background: $bg3;
+    border-color: $gold-dim;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  &.prev {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &.next {
+    align-items: flex-end;
+    text-align: right;
+    margin-left: auto;
+  }
+
+  &.disabled {
+    visibility: hidden;
+  }
+}
+
+.chapter-nav-label {
+  @extend %label-style;
+}
+
+.chapter-nav-title {
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: $text;
+  transition: color 0.2s;
+}
+
+.chapter-nav-link:hover .chapter-nav-title {
+  color: $gold;
+}

@@ -1,0 +1,24 @@
+// =====================================================
+// MAIN SCSS - eluno.org
+// =====================================================
+// Professional 7-1 Architecture with Placeholders
+// Dart Sass 2.0 compatible (@use/@forward)
+// Synced to book-template ✓
+
+// Abstracts (no CSS output - variables, placeholders, mixins)
+@use 'abstracts' as *;
+
+// Base (reset, typography fundamentals)
+@use 'base';
+
+// Layout (grid, nav, notes, footer)
+@use 'layout';
+
+// Components (toggles, panels, media)
+@use 'components';
+
+// Pages (chapter, toc, about)
+@use 'pages';
+
+// Utilities (responsive, print - last for specificity)
+@use 'utilities';

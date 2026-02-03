@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// RESET - Fundamental Styles
+// =====================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hide-scrollbar {
+  @extend %hide-scrollbar;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: $font-body;
+  background: $bg;
+  color: $text;
+  line-height: 1.4;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(var(--gold-rgb), 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(123, 107, 138, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
