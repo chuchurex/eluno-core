@@ -102,6 +102,10 @@ function generateSection(section, glossary, references) {
   html += `                    <h2 class="sec-title">${section.title}</h2>\n`;
 
   section.content.forEach(block => {
+    if (block.type === 'separator') {
+      html += `                    <hr class="separator" />\n`;
+      return;
+    }
     const processedText = processText(block.text, glossary, references);
     if (block.type === 'paragraph') {
       html += `                    <p>${processedText}</p>\n`;
