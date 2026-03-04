@@ -5,7 +5,7 @@
 // =====================================================
 
 .toggle {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 200;
   @extend %panel-base;
@@ -14,13 +14,16 @@
   cursor: pointer;
   font-family: $font-heading;
   font-size: 0.9rem;
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
 }
 
 .nav-toggle {
   top: $spacing-sm;
   left: $spacing-sm;
-  // Hidden on desktop - only visible on tablet/mobile
-  display: none;
 }
 
 .notes-toggle {
@@ -29,15 +32,13 @@
 }
 
 .theme-toggle {
+  display: block !important; // Always visible, including desktop
+  position: fixed; // Fixed to viewport
   top: $spacing-sm;
-  right: $spacing-sm;
+  right: calc(260px + 10px); // 260px sidebar width + 10px from its left edge
   font-size: 1rem;
   padding: 0.4rem $spacing-sm;
-}
-
-.lang-toggle {
-  // Hidden - language selector moved inside sidebar
-  display: none;
+  z-index: 150;
 }
 
 .overlay {

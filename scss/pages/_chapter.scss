@@ -27,6 +27,8 @@
   margin-bottom: 0.5rem;
 }
 
+
+
 .ch-title {
   @extend %heading-style;
   font-size: 2.2rem;
@@ -35,6 +37,14 @@
 
 .section {
   margin-bottom: 2.5rem;
+
+  p {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   > p:first-of-type::first-letter {
     font-family: $font-heading;
@@ -52,6 +62,29 @@
   color: $gold;
   margin-bottom: $spacing-md;
   padding-top: $spacing-sm;
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-xs;
+}
+
+.sec-context-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: $gold-dim;
+  cursor: pointer;
+  padding: 0.2rem;
+  flex-shrink: 0;
+  transition: color 0.2s;
+  line-height: 0;
+
+  &:hover {
+    color: $gold;
+  }
+
+  svg {
+    display: block;
+  }
 }
 
 .divider {

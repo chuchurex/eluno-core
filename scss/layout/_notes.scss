@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 // =====================================================
-// NOTES PANEL
+// CONTEXTUAL SIDEBAR (Notes + Sources)
 // =====================================================
 
 .notes {
@@ -10,23 +10,52 @@
   background: $bg2;
   border-left: 1px solid $border;
   padding: $spacing-lg $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.notes-head {
-  font-size: 0.9rem;
-  color: $muted;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+// --- Section Context Header ---
+.notes-context {
+  padding-bottom: $spacing-md;
   margin-bottom: $spacing-md;
-  padding-bottom: $spacing-sm;
   @extend %border-bottom-subtle;
+  flex-shrink: 0;
 }
 
-.notes-empty {
+.notes-context-label {
+  font-family: $font-heading;
+  font-size: 0.85rem;
+  color: $text2;
+  margin-bottom: $spacing-xs;
+}
+
+.notes-context-title {
+  font-family: $font-heading;
+  font-size: 1.05rem;
+  color: $gold;
+  line-height: 1.4;
+  transition: opacity 0.15s ease;
+}
+
+// --- Glossary Term Area ---
+.notes-term-area {
+  flex: 1;
+  overflow-y: auto;
+  @extend %hide-scrollbar;
+}
+
+.notes-term-empty {
   color: $muted;
   font-size: 0.9rem;
   font-style: italic;
   line-height: 1.6;
+  padding-bottom: $spacing-md;
+
+  .term-example {
+    color: $gold;
+    border-bottom: 1px dotted $gold-dim;
+  }
 }
 
 .note {
@@ -66,6 +95,45 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+// --- Sources Area (pushed to bottom) ---
+.notes-sources-area {
+  margin-top: auto;
+  padding-top: $spacing-md;
+  border-top: 1px solid $border;
+  flex-shrink: 0;
+}
+
+.notes-sources-head {
+  @extend %label-style;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: $spacing-sm;
+}
+
+.notes-sources-empty {
+  color: $muted;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.notes-sources {
+  display: none;
+  font-size: 0.85rem;
+  line-height: 1.8;
+
+  a {
+    @extend %gold-link;
+    padding: 0.15rem 0.35rem;
+    border-radius: $radius-sm;
+    transition: all 0.2s;
+
+    &:hover {
+      background: rgba(201, 169, 98, 0.1);
     }
   }
 }

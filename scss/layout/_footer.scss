@@ -16,6 +16,75 @@
   font-style: italic;
 }
 
+.feedback {
+  @extend %panel-base;
+  margin-top: $spacing-lg;
+  padding: $spacing-md;
+  text-align: center;
+
+  h3 {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    color: $gold;
+    margin-bottom: $spacing-xs;
+    font-weight: 500;
+  }
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  max-width: 500px;
+  margin: $spacing-md auto 0;
+
+  input,
+  textarea {
+    @extend %input-base;
+  }
+
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+.feedback-btn {
+  @extend %button-ghost;
+  display: inline-block;
+  margin-top: $spacing-xs;
+  text-decoration: none;
+  font-size: 0.95rem;
+  align-self: center;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Footer links row
+.footer-links {
+  margin-bottom: $spacing-sm;
+  font-style: normal;
+
+  a {
+    color: $gold-dim;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $gold;
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    margin: 0 0.5rem;
+    opacity: 0.4;
+  }
+}
+
 // L/L Research Attribution
 .footer-attribution {
   margin-top: $spacing-lg;
@@ -34,7 +103,8 @@
 
   a {
     color: $gold-dim;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
     transition: color 0.3s;
 
     &:hover {

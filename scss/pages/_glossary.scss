@@ -1,0 +1,218 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// GLOSSARY PAGE
+// =====================================================
+
+.glossary-subtitle {
+  font-style: italic;
+  color: $muted;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+// --- Filter input ---
+
+.glossary-filter {
+  @extend %input-base;
+  width: 100%;
+  padding: $spacing-sm 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0 1rem;
+}
+
+// --- View toggle (A-Z / Categories) ---
+
+.glossary-view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.glossary-view-btn {
+  font-family: $font-heading;
+  font-size: 0.95rem;
+  padding: 0.5rem $spacing-md;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  background: transparent;
+  color: $text2;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $gold;
+    color: $gold;
+  }
+
+  &.active {
+    background: $gold;
+    color: $bg;
+    border-color: $gold;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
+}
+
+// --- Views ---
+
+.glossary-view-cat {
+  display: none;
+}
+
+// --- A-Z index ---
+
+.glossary-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  justify-content: center;
+  margin-bottom: $spacing-lg;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $border;
+}
+
+.glossary-index-letter {
+  font-family: $font-heading;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-sm;
+  text-decoration: none;
+  color: $gold;
+  border: 1px solid $border;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover:not(.disabled) {
+    background: $gold;
+    color: $bg;
+  }
+
+  &.disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+}
+
+// --- Category navigation ---
+
+.glossary-cat-nav {
+  gap: 0.5rem;
+}
+
+.glossary-cat-nav-btn {
+  font-family: $font-heading;
+  font-size: 0.85rem;
+  padding: 0.35rem $spacing-sm;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  text-decoration: none;
+  color: $gold;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    background: $gold;
+    color: $bg;
+  }
+}
+
+// --- Sections ---
+
+.glossary-letter,
+.glossary-category {
+  margin-bottom: $spacing-lg;
+}
+
+.glossary-letter-heading {
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  color: $gold;
+  border-bottom: 1px solid $border;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+// --- Entries ---
+
+.glossary-entry {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  scroll-margin-top: 5rem;
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: $spacing-xs;
+    color: $text2;
+  }
+}
+
+.glossary-entry-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.glossary-number {
+  font-family: $font-heading;
+  font-size: 0.85rem;
+  color: $muted;
+  min-width: 2.5rem;
+  flex-shrink: 0;
+}
+
+.glossary-term-title {
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.glossary-cat-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid $border;
+  color: $muted;
+  font-family: $font-body;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    color: $gold;
+    border-color: $gold;
+    outline: none;
+  }
+}
+
+// --- Responsive ---
+
+@include mobile {
+  .glossary-entry-header {
+    gap: 0.3rem;
+  }
+
+  .glossary-number {
+    min-width: auto;
+  }
+
+  .glossary-cat-tag {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
+  }
+}

@@ -1,0 +1,78 @@
+@use '../abstracts' as *;
+
+// =====================================================
+// SEARCH (Landing page)
+// =====================================================
+
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 1.5rem auto $spacing-lg;
+}
+
+.search-input {
+  @extend %input-base;
+  width: 100%;
+  padding: $spacing-sm 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $bg2;
+  border: 1px solid $border;
+  border-radius: 6px;
+  margin-top: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.search-result {
+  display: block;
+  padding: $spacing-sm 1rem;
+  text-decoration: none;
+  color: $text;
+  border-bottom: 1px solid $border;
+  transition: background 0.2s;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover,
+  &:focus {
+    background: $bg3;
+  }
+}
+
+.search-result-type {
+  @extend %label-style;
+  font-size: 0.7rem;
+  color: $gold;
+  margin-bottom: 0.15rem;
+}
+
+.search-result-title {
+  font-family: $font-heading;
+  font-size: 0.95rem;
+}
+
+.search-result-text {
+  font-size: 0.8rem;
+  color: $muted;
+  margin-top: 0.2rem;
+  @include truncate;
+}
+
+.search-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: $muted;
+  font-style: italic;
+}

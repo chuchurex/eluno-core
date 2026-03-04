@@ -16,7 +16,26 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 18px;
+  font-size: 112.5%; // 18px relative to 16px base — scales with user preference
+}
+
+// Skip-to-content link (WCAG 2.4.1)
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $spacing-sm;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  background: $gold;
+  color: $bg;
+  font-family: $font-heading;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 0 0 $radius-sm $radius-sm;
+
+  &:focus {
+    top: 0;
+  }
 }
 
 body {
@@ -24,7 +43,9 @@ body {
   background: $bg;
   color: $text;
   line-height: 1.4;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   &::before {
     content: '';

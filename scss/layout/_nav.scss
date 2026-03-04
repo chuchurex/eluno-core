@@ -5,21 +5,12 @@
 // =====================================================
 
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 280px;
-  overflow-y: auto;
-  z-index: 100;
+  grid-area: nav;
+  @extend %sticky-panel;
   background: $bg2;
   border-right: 1px solid $border;
-  padding: 3rem $spacing-md $spacing-lg $spacing-md;
-  padding-top: 3.5rem;
-  // Sidebar open by default
-  transform: translateX(0);
-  // Position context for language selector
-  position: relative;
+  padding: $spacing-lg $spacing-md;
+  padding-top: 3.5rem; // Space for absolute-positioned lang selector
 }
 
 .nav-head {
@@ -69,6 +60,15 @@
     &:hover {
       color: $gold;
     }
+  }
+
+  &--footer {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    border-top: 1px solid $border;
   }
 }
 
@@ -151,6 +151,11 @@
   &:hover {
     color: $gold;
   }
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
 }
 
 .nav-footer-links {
@@ -159,6 +164,18 @@
   @extend %border-bottom-subtle;
   border-bottom: none;
   border-top: 1px solid $border;
+
+  .feedback-link {
+    font-family: $font-heading;
+    color: $gold;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      color: $text;
+      border-left-color: $gold;
+    }
+  }
 }
 
 .nav-lang-selector {

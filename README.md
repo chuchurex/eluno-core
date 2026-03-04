@@ -1,29 +1,50 @@
-# @eluno/core
+# @eluno/core v2
 
-Shared build tools, SCSS styles, and web fonts for [eluno.org](https://eluno.org) book projects.
+Shared build system, SCSS styles, and web fonts for [eluno.org](https://eluno.org) book projects.
 
 ## What's inside
 
-- **scripts/** — Build pipeline (HTML from JSON, PDF generation, deploy via SSH, TTS audiobook tools)
+- **lib/build/** — Modular ESM build system (HTML from JSON, search index, sitemap)
 - **scss/** — 7-1 architecture SCSS stylesheets
-- **fonts/** — Cormorant Garamond + Spectral web fonts
-- **_headers.template** — Cloudflare Pages security headers
+- **fonts/** — Cormorant Garamond + Spectral web fonts (WOFF2)
+- **js/** — Client-side scripts (theme, search, glossary)
+- **defaults/ui.json** — Default UI strings (EN/ES/PT)
+- **bin/build.js** — CLI entry point
 
 ## Usage
 
 Install as a git dependency:
 
 ```bash
-npm install github:chuchurex/eluno-core
+npm install github:chuchurex/eluno-core#v2
 ```
 
-### Build a book
+### Configure your book
+
+Create `eluno.config.js` in your project root:
+
+```js
+export default {
+  siteUrl: 'https://your-book.org',
+  languages: ['en', 'es'],
+  baseLang: 'en',
+  baseLangPrefix: true,
+  bookTitles: { en: 'My Book', es: 'Mi Libro' },
+  chapterUrlPattern: 'slug', // or 'numeric'
+  features: {
+    glossary: true,
+    search: true,
+    mediaToolbar: true,
+    termMarkup: true,
+  }
+}
+```
+
+### Build
 
 ```bash
-# From your book project root (must have i18n/ with content)
-npx eluno-build          # Generate HTML
-npx eluno-pdf 01         # Generate PDF for chapter 1
-npx eluno-deploy         # Deploy to server
+npx eluno-build              # Build all languages
+npx eluno-build --lang es    # Build only Spanish
 ```
 
 ### Compile SCSS
@@ -32,19 +53,41 @@ npx eluno-deploy         # Deploy to server
 sass node_modules/@eluno/core/scss/main.scss:dist/css/main.css --style=compressed
 ```
 
-## Environment variables
+## Content structure
 
-Each project needs a `.env` with:
-
-```env
-DOMAIN=your-domain.org
-LANGUAGES=en,es
-BASE_LANG=en
-UPLOAD_HOST=your-server
-UPLOAD_USER=your-user
-UPLOAD_KEY_PATH=~/.ssh/id_rsa
-UPLOAD_PORT=22
 ```
+your-project/
+├── eluno.config.js
+├── i18n/
+│   ├── en/
+│   │   ├── chapters/01.json, 02.json, ...
+│   │   ├── glossary.json
+│   │   ├── about.json
+│   │   ├── media.json
+│   │   └── ui.json (optional overrides)
+│   ├── es/
+│   │   └── ...
+│   ├── glossary-meta.json
+│   └── provenance/
+│       └── ch01_provenance.json, ...
+├── static/         # Copied to dist/ as-is
+└── src/
+    ├── js/         # Override core JS (optional)
+    ├── fonts/      # Override core fonts (optional)
+    └── scss/       # Override core SCSS (optional)
+```
+
+## Feature flags
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `glossary` | false | Generate glossary page and notes sidebar |
+| `glossaryCategories` | false | Enable category view in glossary |
+| `provenance` | false | Show source citations (Ra Material) |
+| `search` | false | Generate search index and search UI |
+| `mediaToolbar` | false | Show PDF/audio/YouTube buttons |
+| `termMarkup` | false | Parse {term:keyword} markup |
+| `refMarkup` | false | Parse {ref:category:id} markup |
 
 ## License
 

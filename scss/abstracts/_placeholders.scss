@@ -90,6 +90,11 @@
   &:hover {
     color: var(--gold-hover);
   }
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
 }
 
 %nav-link-base {
@@ -102,6 +107,11 @@
 
   &:hover {
     color: $gold;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
   }
 }
 
@@ -146,10 +156,11 @@
   font-family: $font-body;
   font-size: 0.9rem;
   border-radius: $radius-sm;
-  outline: none;
   transition: all 0.3s;
 
-  &:focus {
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
     border-color: $gold-dim;
     background: rgba(201, 169, 98, 0.05);
   }
@@ -179,5 +190,23 @@
     svg {
       transform: scale(1.1);
     }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
+}
+
+// ===== ACCESSIBILITY =====
+
+// prefers-reduced-motion (WCAG 2.3.3)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

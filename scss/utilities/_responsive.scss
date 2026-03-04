@@ -9,10 +9,24 @@
     grid-template-columns: 1fr;
   }
 
-  .nav {
+  .nav,
+  .notes {
     @include fixed-panel(left);
+  }
+
+  .nav {
     left: 0;
     transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .notes {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
 
     &.open {
       transform: translateX(0);
@@ -24,18 +38,26 @@
     max-width: 100%;
   }
 
-  .nav-toggle {
+  .toggle {
     display: block;
   }
 
-  .notes-toggle {
-    display: block;
+  .theme-toggle {
+    right: 120px; // Position 120px from right to leave space with notes button
+  }
+
+  .sec-context-btn {
+    display: inline-flex;
+  }
+
+  .notes-sources-area {
+    margin-top: $spacing-md;
   }
 }
 
 @include mobile {
   body {
-    font-size: 16px;
+    font-size: 100%; // 16px relative — scales with user preference
   }
 
   .ch-title {
@@ -46,12 +68,53 @@
     font-size: 1.15rem;
   }
 
+  .notes-context-title {
+    font-size: 0.95rem;
+  }
+
   .main {
     padding: 3.5rem 1rem 2.5rem;
   }
 
   .section > p:first-of-type::first-letter {
     font-size: 2.5rem;
+  }
+
+  .nav,
+  .notes {
+    width: 85vw;
+  }
+
+  // Reorganize chapter header in mobile
+  .ch-head {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    border-bottom: none;
+  }
+
+  .ch-head-top {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .ch-media-bar {
+    order: 1; // Media bar comes first
+    margin-top: 6px; // Add separation from top controls
+    margin-bottom: 0.75rem;
+    justify-content: center;
+  }
+
+  .ch-num {
+    order: 2; // Number comes second
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .ch-title {
+    order: 3; // Title comes last
   }
 
   // TOC responsive
