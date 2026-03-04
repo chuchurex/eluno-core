@@ -16,12 +16,19 @@
     "./js/*": "./js/*"
   },
   "bin": {
-    "eluno-build": "./bin/build.js"
+    "eluno-build": "./bin/build.js",
+    "eluno-audio": "./bin/audio.js"
   },
   "dependencies": {
     "dotenv": "^17.2.3"
   },
   "peerDependencies": {
-    "sass": "^1.97.0"
+    "sass": "^1.97.0",
+    "node-edge-tts": "^1.2.0",
+    "node-id3": "^0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "node-edge-tts": { "optional": true },
+    "node-id3": { "optional": true }
   }
 }
