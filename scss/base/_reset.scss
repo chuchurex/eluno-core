@@ -26,7 +26,7 @@ html {
   left: $spacing-sm;
   z-index: 999;
   padding: 0.5rem 1rem;
-  background: $gold;
+  background: $accent;
   color: $bg;
   font-family: $font-heading;
   font-size: 0.9rem;
@@ -46,18 +46,4 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-      radial-gradient(ellipse at 20% 20%, rgba(var(--gold-rgb), 0.03) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, rgba(123, 107, 138, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-  }
 }

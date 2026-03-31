@@ -22,14 +22,14 @@
   transition: $property $duration ease;
 }
 
-// Gold glow effect
-@mixin gold-glow($intensity: 0.4) {
-  text-shadow: 0 0 6px rgba(var(--gold-rgb), $intensity);
+// Accent glow effect
+@mixin accent-glow($intensity: 0.4) {
+  text-shadow: 0 0 6px rgba(var(--accent-rgb), $intensity);
 }
 
 // Panel with custom border color
 @mixin panel($border-color: $border) {
-  background: $bg2;
+  background: $surface;
   border: 1px solid $border-color;
   border-radius: $radius-sm;
 }

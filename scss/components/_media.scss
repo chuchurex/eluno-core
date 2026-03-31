@@ -28,7 +28,7 @@
   }
 
   &.active {
-    color: var(--gold-hover);
+    color: var(--accent-hover);
   }
 
   &.disabled {
@@ -40,13 +40,13 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: $gold-dim;
+  color: $accent-dim;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 
 .ch-media-icon:hover .ch-media-label {
-  color: $gold;
+  color: $accent;
 }
 
 // Audio accordion panel - inline expansion
@@ -101,22 +101,22 @@
   align-items: center;
   gap: 0.4em;
   padding: 0.4em 0.8em;
-  background: $bg3;
-  border: 1px solid $gold-dim;
+  background: $surface;
+  border: 1px solid $accent-dim;
   border-radius: $radius-sm;
-  color: $gold;
+  color: $accent;
   font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.2s;
   white-space: nowrap;
 
   &:hover {
-    background: rgba(var(--gold-rgb), 0.2);
-    border-color: $gold;
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: $accent;
   }
 
   &:visited {
-    color: $gold;
+    color: $accent;
   }
 }
 

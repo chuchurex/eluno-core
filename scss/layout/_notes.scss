@@ -7,7 +7,7 @@
 .notes {
   grid-area: sidebar;
   @extend %sticky-panel;
-  background: $bg2;
+  background: $surface;
   border-left: 1px solid $border;
   padding: $spacing-lg $spacing-md;
   display: flex;
@@ -33,7 +33,7 @@
 .notes-context-title {
   font-family: $font-heading;
   font-size: 1.05rem;
-  color: $gold;
+  color: $accent;
   line-height: 1.4;
   transition: opacity 0.15s ease;
 }
@@ -53,8 +53,8 @@
   padding-bottom: $spacing-md;
 
   .term-example {
-    color: $gold;
-    border-bottom: 1px dotted $gold-dim;
+    color: $accent;
+    border-bottom: 1px dotted $accent-dim;
   }
 }
 
@@ -62,7 +62,7 @@
   display: none;
   margin-bottom: $spacing-md;
   padding: 0.875rem;
-  background: $bg3;
+  background: $surface;
   border-left: 2px solid $border;
   border-radius: 0 $radius-sm $radius-sm 0;
   opacity: 0.6;
@@ -71,8 +71,8 @@
   &.active {
     display: block;
     opacity: 1;
-    border-left-color: $gold;
-    background: rgba(201, 169, 98, 0.08);
+    border-left-color: $accent;
+    background: rgba(var(--accent-rgb), 0.08);
   }
 }
 
@@ -80,7 +80,7 @@
   font-family: $font-heading;
   font-size: 0.9rem;
   font-weight: 600;
-  color: $gold;
+  color: $accent;
   margin-bottom: $spacing-xs;
 }
 
@@ -127,13 +127,13 @@
   line-height: 1.8;
 
   a {
-    @extend %gold-link;
+    @extend %accent-link;
     padding: 0.15rem 0.35rem;
     border-radius: $radius-sm;
     transition: all 0.2s;
 
     &:hover {
-      background: rgba(201, 169, 98, 0.1);
+      background: rgba(var(--accent-rgb), 0.1);
     }
   }
 }

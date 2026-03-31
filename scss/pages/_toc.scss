@@ -26,7 +26,7 @@
 
     &:hover,
     &.active {
-      color: $gold;
+      color: $accent;
     }
   }
 }
@@ -64,13 +64,13 @@
   text-align: right;
 
   a {
-    color: $gold-dim;
+    color: $accent-dim;
     text-decoration: none;
-    border-bottom: 1px dotted $gold-dim;
+    border-bottom: 1px dotted $accent-dim;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $gold;
+      color: $accent;
     }
 
     svg {
@@ -87,7 +87,7 @@
 .toc-section-title {
   font-family: $font-heading;
   font-size: 1.1rem;
-  color: $gold-dim;
+  color: $accent-dim;
   letter-spacing: 0.1em;
   margin-bottom: $spacing-lg;
   padding-bottom: $spacing-sm;
@@ -132,7 +132,7 @@
 }
 
 .toc-chapter-arrow {
-  color: $gold;
+  color: $accent;
   opacity: 0.5;
   transition: all 0.2s;
 }

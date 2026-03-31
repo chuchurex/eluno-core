@@ -43,18 +43,18 @@
   transition: all 0.2s;
 
   &:hover {
-    border-color: $gold;
-    color: $gold;
+    border-color: $accent;
+    color: $accent;
   }
 
   &.active {
-    background: $gold;
+    background: $accent;
     color: $bg;
-    border-color: $gold;
+    border-color: $accent;
   }
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 }
@@ -87,12 +87,12 @@
   justify-content: center;
   border-radius: $radius-sm;
   text-decoration: none;
-  color: $gold;
+  color: $accent;
   border: 1px solid $border;
   transition: background 0.2s, color 0.2s;
 
   &:hover:not(.disabled) {
-    background: $gold;
+    background: $accent;
     color: $bg;
   }
 
@@ -115,12 +115,12 @@
   border: 1px solid $border;
   border-radius: $radius-sm;
   text-decoration: none;
-  color: $gold;
+  color: $accent;
   transition: all 0.2s;
   white-space: nowrap;
 
   &:hover {
-    background: $gold;
+    background: $accent;
     color: $bg;
   }
 }
@@ -135,7 +135,7 @@
 .glossary-letter-heading {
   font-family: $font-heading;
   font-size: 1.5rem;
-  color: $gold;
+  color: $accent;
   border-bottom: 1px solid $border;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -194,8 +194,8 @@
 
   &:hover,
   &:focus-visible {
-    color: $gold;
-    border-color: $gold;
+    color: $accent;
+    border-color: $accent;
     outline: none;
   }
 }

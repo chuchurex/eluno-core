@@ -48,7 +48,7 @@
   }
 
   .timeline-time {
-    color: $gold;
+    color: $accent;
     font-weight: 500;
     min-width: 70px;
     flex-shrink: 0;
@@ -74,7 +74,7 @@
 
   .stat-number {
     font-size: 2rem;
-    color: $gold;
+    color: $accent;
     font-family: $font-heading;
   }
 
@@ -85,14 +85,14 @@
 }
 
 .about-funfact {
-  background: linear-gradient(135deg, $bg2 0%, $bg3 100%);
-  border: 1px solid $gold-dim;
+  background: linear-gradient(135deg, $surface 0%, $surface 100%);
+  border: 1px solid $accent-dim;
   border-radius: $radius-sm;
   padding: $spacing-md $spacing-lg;
   margin: $spacing-md 0;
 
   .funfact-title {
-    color: $gold;
+    color: $accent;
     font-weight: 500;
     margin-bottom: $spacing-sm;
     font-family: $font-heading;
@@ -140,7 +140,7 @@
   margin-bottom: $spacing-xl;
 
   h2 {
-    color: $gold;
+    color: $accent;
     font-size: 1.5rem;
     margin-bottom: $spacing-md;
     font-family: $font-heading;
@@ -161,7 +161,7 @@
       content: '→';
       position: absolute;
       left: 0;
-      color: $gold;
+      color: $accent;
     }
 
     a {
@@ -170,7 +170,7 @@
       transition: color 0.2s ease;
 
       &:hover {
-        color: $gold;
+        color: $accent;
       }
     }
   }

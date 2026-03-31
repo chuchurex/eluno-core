@@ -8,7 +8,7 @@
 .disclaimer-banner {
   margin: $spacing-lg 0;
   padding: $spacing-md $spacing-lg;
-  background: rgba(201, 169, 98, 0.05);
+  background: rgba(var(--accent-rgb), 0.05);
   border: 1px solid $border2;
   border-radius: $radius-sm;
   font-size: 0.9rem;
@@ -18,7 +18,7 @@
   .disclaimer-title {
     font-family: $font-heading;
     font-size: 1rem;
-    color: $gold;
+    color: $accent;
     margin-bottom: $spacing-sm;
     font-weight: 500;
     text-transform: uppercase;
@@ -30,14 +30,14 @@
   }
 
   a {
-    color: $gold;
+    color: $accent;
     text-decoration: none;
-    border-bottom: 1px dotted $gold-dim;
+    border-bottom: 1px dotted $accent-dim;
     transition: all 0.3s;
 
     &:hover {
       color: $text;
-      border-bottom-color: $gold;
+      border-bottom-color: $accent;
     }
   }
 }

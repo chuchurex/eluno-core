@@ -6,19 +6,19 @@
 
 // Links - AAA accessible (7:1+ contrast on dark bg)
 a {
-  color: $gold;
+  color: $accent;
   text-decoration: underline;
-  text-decoration-color: rgba(var(--gold-rgb), 0.4);
+  text-decoration-color: rgba(var(--accent-rgb), 0.4);
   text-underline-offset: 3px;
   transition: all 0.2s;
 
   &:hover,
   &:focus {
-    color: var(--gold-hover);
-    text-decoration-color: $gold;
+    color: var(--accent-hover);
+    text-decoration-color: $accent;
   }
 
   &:visited {
-    color: var(--gold-visited);
+    color: var(--accent-visited);
   }
 }

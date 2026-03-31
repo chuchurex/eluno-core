@@ -98,7 +98,7 @@
       setTimeout(() => {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
         const entry = target.closest('.glossary-entry') || target;
-        entry.style.outline = '2px solid var(--gold)';
+        entry.style.outline = '2px solid var(--accent)';
         entry.style.outlineOffset = '4px';
         setTimeout(() => {
           entry.style.outline = '';

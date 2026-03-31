@@ -9,14 +9,14 @@
   position: fixed;
   z-index: 200;
   @extend %panel-base;
-  color: $gold;
+  color: $accent;
   padding: 0.5rem $spacing-sm;
   cursor: pointer;
   font-family: $font-heading;
   font-size: 0.9rem;
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 }

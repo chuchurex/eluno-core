@@ -7,7 +7,7 @@
 .nav {
   grid-area: nav;
   @extend %sticky-panel;
-  background: $bg2;
+  background: $surface;
   border-right: 1px solid $border;
   padding: $spacing-lg $spacing-md;
   padding-top: 3.5rem; // Space for absolute-positioned lang selector
@@ -23,7 +23,7 @@
 .nav-title {
   font-family: $font-heading;
   font-size: 1.2rem;
-  color: $gold;
+  color: $accent;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
@@ -43,7 +43,7 @@
 
     &:hover,
     &.active {
-      color: $gold;
+      color: $accent;
     }
   }
 }
@@ -58,7 +58,7 @@
     color: $text2;
 
     &:hover {
-      color: $gold;
+      color: $accent;
     }
   }
 
@@ -91,12 +91,12 @@
   margin-left: -$spacing-sm;
 
   &:hover {
-    border-left-color: $gold-dim;
+    border-left-color: $accent-dim;
   }
 
   &.current {
-    color: $gold;
-    border-left-color: $gold;
+    color: $accent;
+    border-left-color: $accent;
   }
 
   &.sub {
@@ -113,7 +113,7 @@
     height: 0;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-left: 1px solid rgba(var(--gold-rgb), 0.1);
+    border-left: 1px solid rgba(var(--accent-rgb), 0.1);
     margin-left: 0.5rem;
   }
 
@@ -125,7 +125,7 @@
 
     .nav-chapter-toggle {
       transform: rotate(180deg);
-      color: $gold;
+      color: $accent;
     }
   }
 }
@@ -149,11 +149,11 @@
   @extend %flex-center;
 
   &:hover {
-    color: $gold;
+    color: $accent;
   }
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 }
@@ -167,13 +167,13 @@
 
   .feedback-link {
     font-family: $font-heading;
-    color: $gold;
+    color: $accent;
     font-size: 0.9rem;
     letter-spacing: 0.05em;
 
     &:hover {
       color: $text;
-      border-left-color: $gold;
+      border-left-color: $accent;
     }
   }
 }
@@ -184,7 +184,7 @@
   right: $spacing-sm;
   font-size: 0.8rem;
   color: $muted;
-  background: $bg3;
+  background: $surface;
   border: 1px solid $border;
   border-radius: 4px;
   padding: 0.4rem $spacing-sm;
@@ -198,7 +198,7 @@
 
     &:hover,
     &.active {
-      color: $gold;
+      color: $accent;
     }
   }
 }

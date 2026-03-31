@@ -38,7 +38,7 @@
 // ===== SURFACE PATTERNS =====
 
 %panel-base {
-  background: $bg2;
+  background: $surface;
   border: 1px solid $border;
   border-radius: $radius-sm;
 }
@@ -48,7 +48,7 @@
   transition: all 0.2s;
 
   &:hover {
-    background: $bg3;
+    background: $surface;
     border-color: $border2;
   }
 }
@@ -68,7 +68,7 @@
 %label-style {
   font-family: $font-heading;
   font-size: 0.75rem;
-  color: $gold-dim;
+  color: $accent-dim;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -82,17 +82,17 @@
 
 // ===== INTERACTIVE PATTERNS =====
 
-%gold-link {
-  color: $gold;
+%accent-link {
+  color: $accent;
   text-decoration: none;
   transition: color 0.2s;
 
   &:hover {
-    color: var(--gold-hover);
+    color: var(--accent-hover);
   }
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 }
@@ -106,26 +106,26 @@
   transition: all 0.2s;
 
   &:hover {
-    color: $gold;
+    color: $accent;
   }
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 }
 
 %button-ghost {
   background: transparent;
-  border: 1px solid $gold;
-  color: $gold;
+  border: 1px solid $accent;
+  color: $accent;
   padding: 0.5rem $spacing-md;
   font-family: $font-heading;
   cursor: pointer;
   transition: all 0.3s;
 
   &:hover {
-    background: $gold;
+    background: $accent;
     color: $bg;
   }
 }
@@ -137,19 +137,19 @@
 }
 
 %border-left-accent {
-  border-left: 2px solid $gold-dim;
+  border-left: 2px solid $accent-dim;
   padding-left: $spacing-sm;
 }
 
-%border-left-gold {
-  border-left: 3px solid $gold-dim;
+%border-left-accent-strong {
+  border-left: 3px solid $accent-dim;
   padding-left: $spacing-md;
 }
 
 // ===== FORM ELEMENTS =====
 
 %input-base {
-  background: $bg3;
+  background: $surface;
   border: 1px solid $border;
   color: $text;
   padding: $spacing-sm;
@@ -159,10 +159,10 @@
   transition: all 0.3s;
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
-    border-color: $gold-dim;
-    background: rgba(201, 169, 98, 0.05);
+    border-color: $accent-dim;
+    background: rgba(var(--accent-rgb), 0.05);
   }
 
   &::placeholder {
@@ -179,13 +179,13 @@
   padding: 4px 10px;
   background: transparent;
   border: none;
-  color: $gold;
+  color: $accent;
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
 
   &:hover {
-    color: var(--gold-hover);
+    color: var(--accent-hover);
 
     svg {
       transform: scale(1.1);
@@ -193,7 +193,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $gold;
+    outline: 2px solid $accent;
     outline-offset: 2px;
   }
 }
