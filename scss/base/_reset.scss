@@ -38,6 +38,10 @@ html {
   }
 }
 
+::selection {
+  background: var(--selection);
+}
+
 body {
   font-family: $font-body;
   background: $bg;

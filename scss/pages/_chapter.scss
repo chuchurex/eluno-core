@@ -39,7 +39,7 @@
   margin-bottom: 2.5rem;
 
   p {
-    margin-bottom: $spacing-md;
+    margin-bottom: 1.5em;
 
     &:last-child {
       margin-bottom: 0;
@@ -48,7 +48,7 @@
 
   > p:first-of-type::first-letter {
     font-family: $font-heading;
-    font-size: 3rem;
+    font-size: 3.5rem;
     float: left;
     line-height: 1;
     padding-right: $spacing-xs;
