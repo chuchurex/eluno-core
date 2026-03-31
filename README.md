@@ -6,7 +6,7 @@ Shared build system, SCSS styles, and web fonts for [eluno.org](https://eluno.or
 
 - **lib/build/** — Modular ESM build system (HTML from JSON, search index, sitemap)
 - **scss/** — 7-1 architecture SCSS stylesheets
-- **fonts/** — Cormorant Garamond + Spectral web fonts (WOFF2)
+- **fonts/** — (removed: fonts now loaded via Google Fonts CDN)
 - **js/** — Client-side scripts (theme, search, glossary)
 - **defaults/ui.json** — Default UI strings (EN/ES/PT)
 - **bin/build.js** — CLI entry point

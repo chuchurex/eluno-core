@@ -16,7 +16,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 112.5%; // 18px relative to 16px base — scales with user preference
+  font-size: 118.75%; // 19px relative to 16px base — scales with user preference
 }
 
 // Skip-to-content link (WCAG 2.4.1)
@@ -28,7 +28,7 @@ html {
   padding: 0.5rem 1rem;
   background: $accent;
   color: $bg;
-  font-family: $font-heading;
+  font-family: $font-mono;
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 0 0 $radius-sm $radius-sm;
@@ -42,7 +42,7 @@ body {
   font-family: $font-body;
   background: $bg;
   color: $text;
-  line-height: 1.4;
+  line-height: 1.75;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
