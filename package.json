@@ -12,6 +12,7 @@
     ".": "./lib/build/index.js",
     "./config": "./lib/config.js",
     "./content": "./lib/build/content.js",
+    "./media": "./lib/build/media.js",
     "./scss/*": "./scss/*",
     "./fonts/*": "./fonts/*",
     "./js/*": "./js/*"
