@@ -32,5 +32,8 @@
   "peerDependenciesMeta": {
     "node-edge-tts": { "optional": true },
     "node-id3": { "optional": true }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@parcel/watcher"]
   }
 }
