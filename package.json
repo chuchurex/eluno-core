@@ -2,6 +2,7 @@
   "name": "@eluno/core",
   "version": "2.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.15.1",
   "description": "Shared build system, styles, and fonts for eluno book projects",
   "license": "AGPL-3.0",
   "repository": {
