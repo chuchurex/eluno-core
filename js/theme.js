@@ -1,7 +1,8 @@
 /**
  * Theme — eluno.org
  * Loaded in <head> to prevent flash of wrong theme (FOUC).
- * Light = default (no data-theme attribute).
+ * Light = default, set explicitly as data-theme="light" (content such as the
+ * about page swaps images with [data-theme=light] selectors).
  * Dark = data-theme="dark".
  * Provides: initTheme, toggleTheme, updateThemeButton (global)
  */
@@ -18,7 +19,7 @@ const initTheme = () => {
     document.documentElement.setAttribute('data-theme', 'dark');
     updateThemeButton('dark');
   } else {
-    // Light is default — no attribute needed
+    document.documentElement.setAttribute('data-theme', 'light');
     updateThemeButton('light');
   }
 };
@@ -31,7 +32,7 @@ const toggleTheme = () => {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
   } else {
-    document.documentElement.removeAttribute('data-theme');
+    document.documentElement.setAttribute('data-theme', 'light');
     localStorage.removeItem('theme');
   }
 
