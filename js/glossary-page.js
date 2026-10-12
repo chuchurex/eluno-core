@@ -14,7 +14,8 @@
   const setView = (mode) => {
     const isAz = mode === 'az';
     if (azView) azView.style.display = isAz ? '' : 'none';
-    if (catView) catView.style.display = isAz ? 'none' : '';
+    // 'block', not '': the stylesheet hides .glossary-view-cat by default
+    if (catView) catView.style.display = isAz ? 'none' : 'block';
     viewBtns.forEach((btn) => {
       const active = btn.getAttribute('data-view') === mode;
       btn.classList.toggle('active', active);
