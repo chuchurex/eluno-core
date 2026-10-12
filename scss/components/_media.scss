@@ -14,8 +14,7 @@
     justify-content: center;
     margin: $spacing-md 0;
     border-top: 1px solid $border;
-    border-bottom: 1px solid $border;
-    padding: $spacing-md 0;
+    padding: $spacing-md 0 0; // the next block (search or disclaimer) draws its own rule
   }
 }
 
