@@ -7,8 +7,8 @@
 .nav {
   grid-area: nav;
   @extend %sticky-panel;
-  background: $surface;
-  border-right: 1px solid $border;
+  background: $bg;
+  border-right: 1px solid transparent;
   padding: $spacing-lg $spacing-md;
   padding-top: 3.5rem; // Space for absolute-positioned lang selector
 }
@@ -77,25 +77,21 @@
 }
 
 .nav-section-title {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: $muted;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
 .nav-link {
   @extend %nav-link-base;
-  border-left: 2px solid transparent;
+  border-left: 1px solid transparent;
   padding-left: $spacing-sm;
   margin-left: -$spacing-sm;
 
-  &:hover {
-    border-left-color: $accent-dim;
-  }
-
-  &.current {
-    color: $accent;
+  &.current,
+  &.current:visited {
+    color: $text;
+    font-weight: 600;
     border-left-color: $accent;
   }
 
@@ -184,8 +180,8 @@
   right: $spacing-sm;
   font-size: 0.8rem;
   color: $muted;
-  background: $surface;
-  border: 1px solid $border;
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 4px;
   padding: 0.4rem $spacing-sm;
   z-index: 10;

@@ -42,8 +42,26 @@
     display: block;
   }
 
+  // Solid bar behind the fixed toggles so text never scrolls under bare buttons
+  body:has(.toggle)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.25rem;
+    background: $bg;
+    border-bottom: 1px solid $border;
+    z-index: 95;
+  }
+
   .theme-toggle {
     right: 120px; // Position 120px from right to leave space with notes button
+  }
+
+  // Pages without the notes button (home, about): toggle goes to the corner
+  body:not(:has(.notes-toggle)) .theme-toggle {
+    right: $spacing-sm;
   }
 
   .sec-context-btn {
@@ -110,7 +128,6 @@
   .ch-num {
     order: 2; // Number comes second
     padding-top: 1rem;
-    border-top: 1px solid var(--border);
   }
 
   .ch-title {
@@ -119,21 +136,21 @@
 
   // TOC responsive
   .toc-title {
-    font-size: 1.8rem;
+    font-size: 2.75rem;
   }
 
   .toc-chapter {
-    padding: $spacing-sm $spacing-md;
-    gap: $spacing-sm;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0.75rem 0;
   }
 
   .toc-chapter-num {
-    min-width: 60px;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
   }
 
   .toc-chapter-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   // Chapter nav responsive

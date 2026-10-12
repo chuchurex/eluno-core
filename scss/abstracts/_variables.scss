@@ -5,37 +5,37 @@
 // Colors - Theming via CSS Properties
 // Light mode = default (no data-theme attribute)
 :root {
-  --bg: #f8f5f0;
+  --bg: #fbfbf8;
   --surface: #ffffff;
-  --text: #2a2523;
-  --text2: #8a7e76;
-  --muted: #8a7e76;
-  --accent: #c45d35;
-  --accent-rgb: 196, 93, 53;
-  --accent-dim: #a84d2b;
-  --accent-hover: #a84d2b;
-  --accent-visited: #9a4528;
-  --border: #e5e0d8;
-  --border2: #d5cfc6;
-  --shadow: rgba(42, 37, 35, 0.08);
-  --selection: rgba(196, 93, 53, 0.15);
+  --text: #1a1c22;
+  --text2: #5b606b;
+  --muted: #5b606b;
+  --accent: #2f3a9e;
+  --accent-rgb: 47, 58, 158;
+  --accent-dim: #2f3a9e;
+  --accent-hover: #222b7a;
+  --accent-visited: #2f3a9e;
+  --border: #e3e4e8;
+  --border2: #cfd1d8;
+  --shadow: rgba(26, 28, 34, 0.08);
+  --selection: rgba(47, 58, 158, 0.14);
 }
 
 [data-theme='dark'] {
-  --bg: #191716;
-  --surface: #242120;
-  --text: #ddd8d2;
-  --text2: #8a817a;
-  --muted: #8a817a;
-  --accent: #e07950;
-  --accent-rgb: 224, 121, 80;
-  --accent-dim: #c46a44;
-  --accent-hover: #ee8d66;
-  --accent-visited: #d07048;
-  --border: rgba(221, 216, 210, 0.12);
-  --border2: rgba(221, 216, 210, 0.2);
+  --bg: #14161b;
+  --surface: #1b1e24;
+  --text: #dfe1e6;
+  --text2: #9aa0ab;
+  --muted: #9aa0ab;
+  --accent: #a9b0f7;
+  --accent-rgb: 169, 176, 247;
+  --accent-dim: #a9b0f7;
+  --accent-hover: #d6d2fb;
+  --accent-visited: #a9b0f7;
+  --border: rgba(223, 225, 230, 0.12);
+  --border2: rgba(223, 225, 230, 0.2);
   --shadow: rgba(0, 0, 0, 0.3);
-  --selection: rgba(224, 121, 80, 0.2);
+  --selection: rgba(169, 176, 247, 0.2);
 }
 
 // Map SCSS variables to CSS Custom Properties
@@ -50,9 +50,13 @@ $border: var(--border);
 $border2: var(--border2);
 
 // Typography
-$font-heading: 'Fraunces', serif;
+// One family for everything: hierarchy comes from size, weight and italic
+$font-heading: 'Source Serif 4', Georgia, serif;
 $font-body: 'Source Serif 4', Georgia, serif;
-$font-mono: 'JetBrains Mono', monospace;
+$font-mono: 'Source Serif 4', Georgia, serif;
+
+// Icons
+$icon-external: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5'/%3E%3C/svg%3E");
 
 // Breakpoints
 $bp-tablet: 1100px;

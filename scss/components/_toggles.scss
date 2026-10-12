@@ -9,6 +9,7 @@
   position: fixed;
   z-index: 200;
   @extend %panel-base;
+  background: $bg;
   color: $accent;
   padding: 0.5rem $spacing-sm;
   cursor: pointer;
@@ -36,9 +37,20 @@
   position: fixed; // Fixed to viewport
   top: $spacing-sm;
   right: calc(260px + 10px); // 260px sidebar width + 10px from its left edge
-  font-size: 1rem;
-  padding: 0.4rem $spacing-sm;
+  padding: 0.45rem;
+  line-height: 0;
+  background: transparent;
+  border-color: transparent;
+  color: $accent;
   z-index: 150;
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+
+  svg {
+    display: block;
+  }
 }
 
 .overlay {

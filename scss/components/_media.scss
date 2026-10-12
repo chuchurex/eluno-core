@@ -21,10 +21,12 @@
 
 .ch-media-icon {
   @extend %media-icon;
+  gap: 4px;
+  padding: 4px 12px;
 
   svg {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
   }
 
   &.active {
@@ -37,16 +39,16 @@
 }
 
 .ch-media-label {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: $accent-dim;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: $accent;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 
 .ch-media-icon:hover .ch-media-label {
-  color: $accent;
+  color: var(--accent-hover);
 }
 
 // Audio accordion panel - inline expansion

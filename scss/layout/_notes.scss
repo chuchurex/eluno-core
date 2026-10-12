@@ -7,7 +7,7 @@
 .notes {
   grid-area: sidebar;
   @extend %sticky-panel;
-  background: $surface;
+  background: $bg;
   border-left: 1px solid $border;
   padding: $spacing-lg $spacing-md;
   display: flex;
@@ -25,6 +25,7 @@
 
 .notes-context-label {
   font-family: $font-heading;
+  font-style: italic;
   font-size: 0.85rem;
   color: $text2;
   margin-bottom: $spacing-xs;
@@ -33,6 +34,7 @@
 .notes-context-title {
   font-family: $font-heading;
   font-size: 1.05rem;
+  font-weight: 600;
   color: $accent;
   line-height: 1.4;
   transition: opacity 0.15s ease;
@@ -47,7 +49,7 @@
 
 .notes-term-empty {
   color: $muted;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-style: italic;
   line-height: 1.6;
   padding-bottom: $spacing-md;
@@ -63,7 +65,7 @@
   margin-bottom: $spacing-md;
   padding: 0.875rem;
   background: $surface;
-  border-left: 2px solid $border;
+  border-left: 1px solid $border;
   border-radius: 0 $radius-sm $radius-sm 0;
   opacity: 0.6;
   transition: all 0.3s;
@@ -78,15 +80,15 @@
 
 .note-title {
   font-family: $font-heading;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: $accent;
   margin-bottom: $spacing-xs;
 }
 
 .note-content {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.55;
   color: $text2;
 
   p {
@@ -109,9 +111,7 @@
 
 .notes-sources-head {
   @extend %label-style;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-style: italic;
   margin-bottom: $spacing-sm;
 }
 
@@ -121,19 +121,45 @@
   font-style: italic;
 }
 
+// Comma hugs the number; the external-link icon fades into the widened space after it
 .notes-sources {
   display: none;
   font-size: 0.85rem;
   line-height: 1.8;
+  word-spacing: 0.75em;
 
   a {
     @extend %accent-link;
-    padding: 0.15rem 0.35rem;
-    border-radius: $radius-sm;
-    transition: all 0.2s;
+    position: relative;
+    white-space: nowrap;
+    word-spacing: normal;
+    font-variant-numeric: tabular-nums;
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--accent-rgb), 0.35);
+    text-underline-offset: 3px;
 
     &:hover {
-      background: rgba(var(--accent-rgb), 0.1);
+      text-decoration-color: currentColor;
     }
+  }
+
+  a[target='_blank']::after {
+    content: '';
+    position: absolute;
+    left: calc(100% + 0.42em);
+    top: 50%;
+    width: 0.62em;
+    height: 0.62em;
+    transform: translateY(-50%);
+    background: currentColor;
+    mask: $icon-external center / contain no-repeat;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+    pointer-events: none;
+  }
+
+  a[target='_blank']:hover::after,
+  a[target='_blank']:focus-visible::after {
+    opacity: 1;
   }
 }

@@ -35,11 +35,12 @@
   text-align: center;
   margin-bottom: $spacing-xl;
   padding-bottom: $spacing-lg;
-  @extend %border-bottom-subtle;
 }
 
 .toc-title {
   @extend %heading-style;
+  font-weight: 500;
+  letter-spacing: -0.015em;
   font-size: 4.5rem;
   color: $text;
   margin-bottom: $spacing-md;
@@ -85,56 +86,59 @@
 }
 
 .toc-section-title {
-  font-family: $font-heading;
-  font-size: 1.1rem;
-  color: $accent-dim;
-  letter-spacing: 0.1em;
-  margin-bottom: $spacing-lg;
-  padding-bottom: $spacing-sm;
-  @extend %border-bottom-subtle;
+  @extend %heading-style;
+  font-size: 1.6rem;
+  color: $text;
+  margin-bottom: $spacing-md;
 }
 
+// Book-style contents: rows on a rule, no boxes
 .toc-chapters {
   display: flex;
   flex-direction: column;
-  gap: $spacing-sm;
+  border-top: 1px solid $border;
 }
 
 .toc-chapter {
-  @extend %panel-interactive;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  align-items: baseline;
   gap: $spacing-md;
-  padding: $spacing-md $spacing-lg;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid $border;
   text-decoration: none;
   color: $text;
 
-  &:hover {
-    transform: translateX(4px);
+  &:visited {
+    color: $text;
+  }
 
-    .toc-chapter-arrow {
-      opacity: 1;
-      transform: translateX(4px);
-    }
+  &:hover .toc-chapter-title,
+  &:focus-visible .toc-chapter-title {
+    color: $accent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 4px;
   }
 }
 
 .toc-chapter-num {
   @extend %label-style;
-  letter-spacing: 0.15em;
-  min-width: 80px;
+  font-style: italic;
+  font-size: 0.85rem;
 }
 
 .toc-chapter-title {
   font-family: $font-heading;
   font-size: 1.2rem;
-  flex: 1;
+  line-height: 1.4;
+  transition: color 0.15s ease-out;
 }
 
 .toc-chapter-arrow {
-  color: $accent;
-  opacity: 0.5;
-  transition: all 0.2s;
+  display: none;
 }
 
 // Homepage Introduction Text

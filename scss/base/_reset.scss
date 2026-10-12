@@ -42,6 +42,12 @@ html {
   background: var(--selection);
 }
 
+html {
+  accent-color: $accent;
+  caret-color: $accent;
+  scrollbar-color: $border2 transparent;
+}
+
 body {
   font-family: $font-body;
   background: $bg;
